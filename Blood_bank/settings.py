@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-n%*htufhqcmjmo6zl(id6m(%q#3t-8rkf28!0xuowv(s2^b*6f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [radiant-unicorn-d1b28b.netlify.app]
 
 
 # Application definition
