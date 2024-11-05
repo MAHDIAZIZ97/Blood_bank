@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}home{% endblock title %}
+
+{% block body %}
+
+<div class="album py-4 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% comment %} <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+            <img src="/upload/{{ product.0.image.url }}" alt="{{ product.name }}" />
+            <div class="card-body">
+              <p class="card-text">Blood Group: Others</p>
+              <p>Stock: 0</p>
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="details">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                </div>
+                <!-- <small class="text-muted">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div> {% endcomment %}
+        {% for i in product %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            
+              <img src="{{ i.blood_image.url }}" alt="{{ product.blood_name }}">
+              
+            <div class="card-body text-center">
+              <p class="card-text"><h3>{{i.blood_name}} Blood</h3></p>
+              <p><b>In stock: <span class="text-primary">{{ i.blood_stock }}</b></span></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group m-auto">
+                  <a href="{% url 'view_detail' i.id %}">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Request or Donate</button>
+                  </a>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                </div>
+                <!-- <small class="text-muted">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        {% endfor %}
+          
+      </div>
+    </div>
+  </div>
+
+{% endblock body %}

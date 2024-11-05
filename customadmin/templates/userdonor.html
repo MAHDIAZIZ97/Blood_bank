@@ -1,0 +1,38 @@
+{% extends "adminbase.html" %}
+
+{% block title %}users{% endblock title %}
+{% block body %}
+    <h2>patient List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Donor Name</th>
+                <th>Phone No</th>
+                <th>Address</th>
+                <th>Any Desease</th>
+                <th>City</th>
+                <th>Zip</th>
+                <th>State</th>
+                <th>Blood Type</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+                <tr>
+                    <td>{{ donor.dname }}</td>
+                    <td>{{ donor.dcontact }}</td>
+                    <td>{{ donor.daddress }}</td>
+                    <td>{{ donor.ddesease }}</td>
+                    <td>{{ donor.city }}</td>
+                    <td>{{ donor.zip }}</td>
+                    <td>{{ donor.state }}</td>
+                    <td>{{ donor.type }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock body %}
+

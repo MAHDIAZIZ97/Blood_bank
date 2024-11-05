@@ -1,0 +1,165 @@
+<!-- hero section -->
+       <div class=" p-0 w-full row gap-4 mt-4" style=" flex-wrap: wrap;  justify-content: center; min-height: 60vh;" >
+        <div class="col px-5 text-center "><p class="h4" style="font-weight: 400;">Workflow-based web-enabled service-centric comprehensive IT solution for managing processes 
+            and services of an individual Blood Bank or Blood Bank attached to a Hospital.
+
+            SaaS solution is based on a multi-tenant architecture and made available over Cloud 
+            Infrastructure. With this model, a single version of the application, with a single
+             configuration (hardware, network, operating system), is proposed to be used by multiple 
+             Blood Banks ("tenants") across various states.</p></div>
+        <div class="col">
+          <img src="resources/image.png" alt="" width="400px" height="400px">
+        </div>
+      </div>
+
+
+      <!-- ------part-1------- -->
+       <!-- card-1 -->
+       <div class="container d-flex flex-col p-0 gap-5 mt-3 " style="flex-wrap: wrap;  justify-content: center;">
+        <div class="card bg-primary" style="width: 18rem;">
+          <h5 class="text-center mb-4">Why LIFE SOURCE?</h5>
+           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos temporibus 
+           aspernatur distinctio blanditiis,
+            doloremque sed repellendus ipsa. Nisi, ducimus. Esse?
+        </div>
+       <!-- card-2 -->
+       <div class="card" style="width: 12rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="text-center">Standards</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+       <!-- card-3 -->
+       <div class="card" style="width: 12rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="text-center">Dashboard</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+       <!-- card-4 -->
+       <div class="card" style="width: 12rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="text-center">Device Integration</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      </div>
+
+
+      <!------------ part -2 ----------------->
+      <h2 class="text-primary text-center mt-4" id="modules">AVALILABLE MODULES</h2>
+      <hr class="mx-auto" style="width: 5rem; background-color: rgb(1, 44, 41); height: 0.3rem;  justify-content: center; ">
+      <div class="container d-flex  p-0 gap-5 mt-3 " style="flex-wrap: wrap;  justify-content: center;">
+          <!-- card-1 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">Donor Management</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        </div>
+       <!-- card-2 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">Bleeding entry & screening</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+       <!-- card-3 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <h4 class="text-center">Blood Transfusion</h4>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+       <!-- card-4 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">Blood Camp Management</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+         <!-- card-5 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">Apherasis</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+         <!-- card-6 -->
+       <div class="card" style="width: 20rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">Receive and Transfer of  Blood</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      </div>
+
+      <!-----------part--3----------->
+      <h2 class="text-primary text-center mt-4" id="blood-banks">BLOOD BANKS</h2>
+      <hr class="mx-auto" style="width: 5rem; background-color: rgb(1, 44, 41); height: 0.3rem;  justify-content: center; ">
+      <br>
+      <p class="text-center text-danger">More than 70 Blood Banks are using e-BloodBank Application.</p>
+      <div class="container d-flex  p-0 gap-5 mt-3 " style="flex-wrap: wrap;  justify-content: center;">
+        <div class="card" style="width: 30rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+
+      <!-- -------contact--------- -->
+      <h2 class="text-primary text-center mt-4" id="contact">CONTACT</h2>
+      <hr class="mx-auto" style="width: 5rem; background-color: rgb(1, 44, 41); height: 0.3rem;  justify-content: center; ">
+      <div class="container d-flex  p-0 gap-5 my-3 " style="flex-wrap: wrap;  justify-content: center;">
+        <div class="card" style="width: 20rem;">
+            
+            <div class="card-body">
+              <h5 class="text-center">24X7 Helpline:</h5>
+              <p class="card-text text-center">+91-000000000</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 20rem;">
+           
+            <div class="card-body">
+              <h5 class="text-center">Email:</h5>
+              <p class="card-text text-center">care@lifesource.com</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 20rem;">
+            
+            <div class="card-body">
+              <h5 class="text-center">Contact:</h5>
+              <p class="card-text text-center">+91-000000000</p>
+            </div>
+        </div>
+      </div>

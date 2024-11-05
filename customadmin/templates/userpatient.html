@@ -1,0 +1,44 @@
+{% extends "adminbase.html" %}
+
+{% block title %}users{% endblock title %}
+{% block body %}
+    <h2>patient List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Phone No</th>
+                <th>Address</th>
+                <th>Desease Name</th>
+                <th>Hospital Name</th>
+                <th>Hospital Contact No</th>
+                <th>Hospital Address</th>
+                <th>City</th>
+                <th>Zip</th>
+                <th>State</th>
+                <th>Blood Type</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.pname }}</td>
+                    <td>{{ patient.pcontact }}</td>
+                    <td>{{ patient.paddress }}</td>
+                    <td>{{ patient.pdesease }}</td>
+                    <td>{{ patient.hname }}</td>
+                    <td>{{ patient.hcontact }}</td>
+                    <td>{{ patient.haddress }}</td>
+                    <td>{{ patient.city }}</td>
+                    <td>{{ patient.zip }}</td>
+                    <td>{{ patient.state }}</td>
+                    <td>{{ patient.type }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock body %}
+

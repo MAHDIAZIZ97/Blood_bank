@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}details{% endblock title %}
+
+{% block body %}
+
+{% for i in product %}
+<section class="py-4">
+  <div class="container">
+    <h3>{{ i.blood_name }} Blood</h3>
+    <div class="row gx-5">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+          <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="">
+            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="{{ i.blood_image.url }}">
+          </a>
+        </div>
+        
+      </aside>
+      <main class="col-lg-6">
+        <div class="ps-lg-3">
+          <h4 class="title text-dark">
+            {{ i.blood_name }} Blood Group
+          </h4>
+          
+            <span class="text-muted"><i class="fas fa-shopping-basket fa-sm mx-1"></i> {{i.blood_stock}} </span>
+            <span class="text-success ms-2">Bag in stock</span>
+          </div>
+
+      
+          <p>
+            You can take blood or donate blood
+            from here
+          </p>
+
+          <div class="row">
+            <dt class="col-3">Type:</dt>
+            <dd class="col-9">{{ i.blood_name }}</dd>
+
+            <dt class="col-3">Bag Size:</dt>
+            <dd class="col-9">250 ml</dd>
+
+            {% comment %} <dt class="col-3">Pouch Material:</dt>
+            <dd class="col-9">Plastic</dd> {% endcomment %}
+          </div>
+
+          <hr />
+
+          <div class="row mb-4">
+            <div class="col-md-4 col-6">
+              <label class="mb-2">Quantity</label>
+              <select class="form-select border border-secondary" id="quantitySelect" style="height: 35px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+          </div>
+          {% comment %} <a href="{% url 'patient' i.id %}" class="btn btn-warning shadow-0" data-bs-toggle="modal" data-bs-target="#patientModal"> Patient </a>
+          <a href="{% url 'donor' i.id %}" class="btn btn-primary shadow-0" data-bs-toggle="modal" data-bs-target="#donorModal"> <i class="me-1 fa fa-shopping-basket"></i> Donate </a> {% endcomment %}
+        <!-- Patient Modal Trigger -->
+<!-- Patient Modal Trigger -->
+<a href="#" class="btn btn-warning shadow-0" data-bs-toggle="modal" data-bs-target="#patientModal" 
+   onclick="setFormData('{{ i.blood_name }}', document.getElementById('quantitySelect').value)">
+   Patient
+</a>
+
+
+<!-- Donor Modal Trigger -->
+<a href="#" class="btn btn-primary shadow-0" data-bs-toggle="modal" data-bs-target="#donorModal" 
+onclick="setFormData('{{ i.blood_name }}', document.getElementById('quantitySelect').value)">
+Donate 
+</a>
+
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+<!-- content -->
+
+<section class="bg-light border-top py-4">
+  <div class="container">
+    <div class="row gx-4">
+      <div class="col-lg-12 mb-6">
+        <div class="border rounded-2 px-3 py-2 bg-white">
+          <!-- Pills navs -->
+          
+          <!-- Pills navs -->
+
+          <!-- Pills content -->
+          <div class="tab-content" id="ex1-content">
+            <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+              <p>
+                LifeSource is a comprehensive blood bank management system designed to streamline the entire blood donation and transfusion process, ensuring efficiency, transparency, and safety. This SaaS platform allows blood banks to manage donor registration, blood collection, inventory, testing, and distribution in one centralized system. With an intuitive user interface, LifeSource simplifies the management of blood donation camps, from scheduling and donor communication to logistical coordination, improving the overall experience for both donors and staff. One of the standout features of LifeSource is its real-time inventory management, allowing blood banks to track available blood components (like whole blood, plasma, and platelets) and ensure timely transfers between hospitals and clinics. It also integrates seamlessly with testing protocols to ensure the blood meets safety standards before being distributed. The platform also supports apheresis management, enabling the collection of specific blood components and optimizing the supply chain for high-demand components like platelets. Automated alerts for low inventory, upcoming donation eligibility, and compliance checks ensure that blood supply is always well-managed and secure. LifeSource also offers comprehensive reporting tools for audits, regulatory compliance, and performance monitoring, helping blood banks make data-driven decisions to meet community needs. By digitizing and automating crucial processes, LifeSource enhances blood bank operations, ultimately saving lives.
+              </p>
+              
+          <!-- Pills content -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+{% comment %} {% endfor %} {% endcomment %}
+
+
+<!--Patient Modal -->
+{% comment %} {% for i in product in  %} {% endcomment %}
+<div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="patientModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="patientModalLabel">Patient's Details for {{i.blood_name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3" action="{% url 'patient' %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" id="bloodGroupInput" name="blood_group" value="">
+          <input type="hidden" id="quantityInput" name="quantity" value="">
+          <div class="col-md-6">
+            <label for="pname" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="pname" name="pname">
+          </div>
+          <div class="col-md-6">
+            <label for="pcontact" class="form-label">Phone No</label>
+            <input type="text" class="form-control" id="pcontact" name="pcontact">
+          </div>
+          <div class="col-12">
+            <label for="paddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="paddress" name="paddress" placeholder="1234 Main St">
+          </div>
+          <div class="col-12">
+            <label for="pdesease" class="form-label">Desease Name</label>
+            <input type="text" class="form-control" id="pdesease" name="pdesease" placeholder="1234 Main St">
+          </div>
+          <div class="col-md-6">
+            <label for="hname" class="form-label">Hospital Name</label>
+            <input type="text" class="form-control" id="hname" name="hname">
+          </div>
+          <div class="col-md-6">
+            <label for="hcontact" class="form-label">Hospital Contact No</label>
+            <input type="text" class="form-control" id="hcontact" name="hcontact">
+          </div>
+          <div class="col-12">
+            <label for="haddress" class="form-label">Hospital Address</label>
+            <input type="text" class="form-control" id="haddress" name="haddress" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="col-md-5">
+            <label for="city" class="form-label">Hospital City</label>
+            <input type="text" class="form-control" id="city" name="city">
+          </div>
+          <div class="col-md-3">
+            <label for="zip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip">
+          </div>
+          <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <select id="state" class="form-select" id='state' name='state'>
+              <option selected>Choose...</option>
+              <option>West Bengal</option>
+            </select>
+          </div>
+          {% comment %} <div class="col-md-4">
+            <label for="inputState" class="form-label">Blood Group</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+
+            </select>
+          </div> {% endcomment %}
+          <div class="col-md-4">
+            <label for="type" class="form-label">Blood Type</label>
+            <select id="type" class="form-select" name='type'>
+              <option selected>Choose...</option>
+              <option>Whole Blood</option>
+              <option>PRBC</option>
+              <option>FFP</option>
+            </select>
+          </div>
+          {% comment %} <div class="col-md-4">
+            <label for="inputState" class="form-label">Select Quantity</label>
+            <select id="inputState" class="form-select">
+              <option selected>Choose...</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div> {% endcomment %}
+          
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" onclick="console.log('Blood Group before submission:', document.getElementById('bloodGroupInput').value)">
+              Submit
+           </button>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Donor Modal -->
+<div class="modal fade" id="donorModal" tabindex="-1" aria-labelledby="donorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="donorModalLabel">Donor's Details for {{i.blood_name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3" action="/donor" method="post">
+          {% csrf_token %}
+          {% comment %} <input type="hidden" id="bloodGroupInput" name="blood_group" value="">
+          <input type="hidden" id="quantityInput" name="quantity" value=""> {% endcomment %}
+          <div class="col-md-6">
+            <label for="dname" class="form-label">Donor Name</label>
+            <input type="text" class="form-control" id="dname" name="dname" required>
+          </div>
+          <div class="col-md-6">
+            <label for="dcontact" class="form-label">Phone No</label>
+            <input type="text" class="form-control" id="dcontact" name="dcontact" required>
+          </div>
+          <div class="col-12">
+            <label for="daddress" class="form-label">Address</label>
+            <input type="text" class="form-control" id="daddress" name="daddress" placeholder="1234 Main St" required>
+          </div>
+          <div class="col-8">
+            <label for="ddisease" class="form-label">Do you have any disease</label>
+            <input type="text" class="form-control" id="ddisease" name="ddisease" required> 
+          </div>
+          <div class="col-md-4">
+            <label for="blood_group" class="form-label">Select Group</label>
+            <select id="blood_group" class="form-select" id="blood_group" name="blood_group" required>
+              <option selected>Choose...</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          <div class="col-md-5">
+            <label for="dcity" class="form-label">City</label>
+            <input type="text" class="form-control" id="dCity" name="dcity" required>
+          </div>
+          <div class="col-md-3">
+            <label for="dzip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="dzip" name="dzip" required>
+          </div>
+          <div class="col-md-4">
+            <label for="dstate" class="form-label">State</label>
+            <select id="dstate" class="form-select" id="dstate" name="dstate" required>
+              <option selected>Choose...</option>
+              <option>West Bengal</option>
+            </select>
+          </div>
+          
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock body %}
+
+
+  
+  
