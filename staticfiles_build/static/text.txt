@@ -1,0 +1,8 @@
+Creating a new project that is blood bank management system
+
+
+<div class="container my-5">
+  <div class="col-sm-6 text-center align self-center">
+    <img src="{{ i.blood_image.url }}" alt="" class="img-fluid img-thumbnail">
+  </div>
+</div>
